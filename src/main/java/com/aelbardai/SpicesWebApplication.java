@@ -9,4 +9,6 @@ public class SpicesWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpicesWebApplication.class, args);
 	}
+
+
 }
