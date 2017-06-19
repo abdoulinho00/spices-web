@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sd="http://www.thymeleaf.org/spring-data"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout"
+      th:with="title='Spices'">
+<th:block layout:fragment="content">
+    <div class="container p-t-30">
+
+        <div class="row  p-t-30">
+            <div class="col-md-12">
+                <table class="datatable_no_addon stripe" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>spice ID</th>
+                        <th>name</th>
+                        <th>scientific name</th>
+                        <th data-orderable="false"></th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>spice ID</th>
+                        <th>name</th>
+                        <th>scientific name</th>
+                        <th></th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <tr th:each="spice : ${spices}">
+                        <td th:text="${spice.id}"></td>
+                        <td th:text="${spice.name}"></td>
+                        <td th:text="${spice.scientificName}"></td>
+
+                        <td class="actions">
+                            <a th:href="@{/spices/{id}(id=${spice.id})}">
+                                    <span class="fa-stack fa-lg">
+                                      <i class="fa fa-square fa-stack-2x"></i>
+                                      <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
+                                    </span>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="row p-t-30">
+                    <div class="col-sm-6">
+                        <div sd:pagination-summary=""></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div sd:page-object="${spices}">
+                            <ul class="pagination pull-right m-t-0" sd:pagination="full"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>

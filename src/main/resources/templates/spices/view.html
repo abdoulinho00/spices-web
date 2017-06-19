@@ -1,12 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sd="http://www.thymeleaf.org/spring-data"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout"
+      th:with="title='Spices'">
+<th:block layout:fragment="content">
+    <div class="container p-t-30">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"><a th:href="@{/spices/add}">Add a new spice</a></li>
+                    <li class="list-group-item"><a th:href="@{/spices/list}">See all the spices we have</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row  p-t-30">
+            <div class="col-md-4">
+                <h2>Pick of the day</h2>
+            </div>
+            <div class="col-md-4 col-md-offset-2">
+                <h2>Our latest spice</h2>
+            </div>
+        </div>
 
-    <meta charset="UTF-8" />
-    <title>Title</title>
-</head>
-<body>
-<h1> List all spices</h1>
-    list all spices
-</body>
+        <div class="row  p-t-30">
+            <div class="col-md-4">
+                <div class="jumbotron mail-bg-primary">
+
+                    <h4>Spice Id:</h4>
+                    <h5 th:text="${randomSpice.id}"></h5>
+
+                    <h4>Name:</h4>
+                    <h5 th:text="${randomSpice.name}"></h5>
+
+                    <h4>Scientific Name:</h4>
+                    <h5 th:text="${randomSpice.scientificName}"></h5>
+
+                    <h4>Price</h4>
+                    <h5 th:text="${randomSpice.price}"></h5>
+
+                    <h4>Image</h4>
+                    <h5 th:text="${randomSpice.imagePath}"></h5>
+
+                    <h4>Benefits</h4>
+                    <h5 th:text="${randomSpice.benefits}"></h5>
+
+                    <h4>Cultivation area:</h4>
+                    <h5 th:text="${randomSpice.cultivationArea}"></h5>
+                </div>
+            </div>
+            <div class="col-md-4 col-md-offset-2">
+                <div class="jumbotron mail-bg-primary">
+                    <h4>Spice Id:</h4>
+                    <h5 th:text="${lastSpice.id}"></h5>
+
+                    <h4>Name:</h4>
+                    <h5 th:text="${lastSpice.name}"></h5>
+
+                    <h4>Scientific Name:</h4>
+                    <h5 th:text="${lastSpice.scientificName}"></h5>
+
+                    <h4>Price</h4>
+                    <h5 th:text="${lastSpice.price}"></h5>
+
+                    <h4>Image</h4>
+                    <h5 th:text="${lastSpice.imagePath}"></h5>
+
+                    <h4>Benefits</h4>
+                    <h5 th:text="${lastSpice.benefits}"></h5>
+
+                    <h4>Cultivation area:</h4>
+                    <h5 th:text="${lastSpice.cultivationArea}"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
 </html>

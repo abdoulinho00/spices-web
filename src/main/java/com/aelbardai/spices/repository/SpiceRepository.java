@@ -1,12 +1,14 @@
-package com.aelbardai.repository;
+package com.aelbardai.spices.repository;
 
-import com.aelbardai.domain.Spice;
+import com.aelbardai.spices.domain.Spice;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by dev on 5/23/17.
+ * Spice Repository class
  */
 @Repository
 public interface SpiceRepository extends CrudRepository<Spice, Long> {
+
+    Spice findFirstByOrderByIdDesc();
 }

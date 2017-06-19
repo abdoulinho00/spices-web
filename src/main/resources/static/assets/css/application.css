@@ -1,0 +1,100 @@
+html body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+}
+
+a:hover {
+    color: #07b76f;
+    text-decoration: none;
+}
+
+.m-t-0 {
+    margin-top: 0px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.m-t-30 {
+    margin-top: 30px;
+}
+
+.m-b-10 {
+    margin-bottom: 10px;
+}
+
+.p-t-0 {
+    padding-top: 0px;
+}
+
+.p-t-10 {
+    padding-top: 10px;
+}
+
+.p-t-20 {
+    padding-top: 20px;
+}
+
+.p-t-30 {
+    padding-top: 30px;
+}
+
+.navbar{
+    background-color: #00a32c;
+    border: none;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #07b76f;
+    background-color: #fff;
+}
+
+.button, button {
+    background-color: #07b76f;
+    border-style: solid;
+    border-width: 0;
+    line-height: normal;
+    margin: 0 0 1.25rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    border-color: #07b76f;
+    color: #fff;
+    -webkit-transition: background-color .3s ease-out;
+    -moz-transition: background-color .3s ease-out;
+    transition: background-color .3s ease-out;
+    padding: 1rem 2rem 1.0625rem 2rem;
+    font-size: 1.25rem;
+}
+
+.button:hover, button:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.delete {
+    color: #d70000;
+}
+
+a#delete_organization {
+    margin-top: 7px;
+    color: #d70000;
+}
+
+div.jumbotron.mail-bg-primary {
+    background-color: #935d11;
+    color: #fff;
+}

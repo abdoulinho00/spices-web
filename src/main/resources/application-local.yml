@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    name: spices
+    url: jdbc:mysql://localhost:3306/spices
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: MYSQL

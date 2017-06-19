@@ -10,5 +10,4 @@ public class SpicesWebApplication {
 		SpringApplication.run(SpicesWebApplication.class, args);
 	}
 
-
 }
