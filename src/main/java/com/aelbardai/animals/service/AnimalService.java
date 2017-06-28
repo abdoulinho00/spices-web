@@ -11,5 +11,6 @@ public interface AnimalService {
     Animal getLastAnimal();
     Animal getRandomAnimal();
     Animal save(Animal animal);
+    Animal getAnimalById(Long id);
 
 }

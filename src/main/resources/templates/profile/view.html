@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout"
+      th:with="title='Spices'">
+<th:block layout:fragment="content">
+    <div class="container p-t-30">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"><a th:href="@{/profile/myfiles}">View my files</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <ul  class="list-group col-md-6">
+            <li class="list-group-item list-group-item-success" >
+                Email
+            </li>
+            <li class="list-group-item" th:text="${user.user.email}">
+                email
+            </li>
+            <li class="list-group-item list-group-item-success" >
+                Password
+            </li>
+            <li class="list-group-item" th:text="${user.user.passwordHash}">
+                passwordHash
+            </li>
+        </ul>
+
+
+    </div>
+</th:block>
+</html>

@@ -49,4 +49,9 @@ public class AnimalServiceImpl implements AnimalService{
             return null;
         }
     }
+
+    @Override
+    public Animal getAnimalById(Long id){
+        return animalRepository.findOne(id);
+    }
 }

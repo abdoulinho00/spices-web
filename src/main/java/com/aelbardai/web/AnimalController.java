@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,6 +32,12 @@ public class AnimalController {
         ModelAndView model =  new ModelAndView("animals/view" , "lastAnimal", animalService.getLastAnimal());
         model.addObject("randomAnimal" , animalService.getRandomAnimal());
         return model;
+    }
+
+    @GetMapping("/{id}")
+    public ModelAndView viewAnimalDetails(@PathVariable("id") Long id){
+        Animal animal = animalService.getAnimalById(id);
+        return new ModelAndView("animals/details" ,"animal" , animal);
     }
 
     @GetMapping("/add")

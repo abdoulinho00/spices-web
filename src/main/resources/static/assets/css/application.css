@@ -48,7 +48,7 @@ a:hover {
 }
 
 .navbar{
-    background-color: #00a32c;
+    background-color: #89bf04;;
     border: none;
 }
 
@@ -96,5 +96,10 @@ a#delete_organization {
 
 div.jumbotron.mail-bg-primary {
     background-color: #935d11;
+    color: #fff;
+}
+
+div.enhance{
+    background: #63b175;
     color: #fff;
 }

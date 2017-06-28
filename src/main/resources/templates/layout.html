@@ -2,8 +2,9 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
       >
-    <th:block layout:include="general/header"/>
+    <th:block layout:insert="general/header"/>
     <body>
         <nav class="navbar-inverse navbar-fixed-top navbar">
             <div class="container">
@@ -22,14 +23,18 @@
                         <li th:classappend="${#httpServletRequest.getRequestURI().startsWith('/animals') ? 'active':''}"><a th:href="@{/animals}">Animals</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
+                        <li class="dropdown" sec:authorize="isAuthenticated()">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                <!--<span sec:authentication="name">admin</span><span class="caret"></span>-->
-                                admin
+                                <span sec:authentication="name">admin</span><span class="caret"></span>
+
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a th:href="@{/logout}">Logout</a></li>
+                                <li><a th:href="@{/profile}">Profile</a></li>
                             </ul>
+                        </li>
+                        <li sec:authorize="isAnonymous()">
+                            <a th:href="@{/login}">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -41,5 +46,5 @@
             </div>
         </div>
     </body>
-    <th:block layout:include="general/footer"/>
+    <th:block layout:insert="general/footer"/>
 </html>
