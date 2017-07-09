@@ -15,12 +15,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <span class="navbar-brand" href="#">Spices and Animals</span>
+                    <a class="navbar-brand" th:href="@{/}">Spices and Animals</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li th:classappend="${#httpServletRequest.getRequestURI().startsWith('/spices') ? 'active':''}"><a th:href="@{/spices}">Spices</a></li>
                         <li th:classappend="${#httpServletRequest.getRequestURI().startsWith('/animals') ? 'active':''}"><a th:href="@{/animals}">Animals</a></li>
+                        <li th:classappend="${#httpServletRequest.getRequestURI().startsWith('/profile/nyfiles') ? 'active':''}"><a th:href="@{/profile/myfiles}">My files</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown" sec:authorize="isAuthenticated()">
@@ -33,9 +34,8 @@
                                 <li><a th:href="@{/profile}">Profile</a></li>
                             </ul>
                         </li>
-                        <li sec:authorize="isAnonymous()">
-                            <a th:href="@{/login}">Login</a>
-                        </li>
+                        <li sec:authorize="isAnonymous()"><a th:href="@{/login}">Login</a></li>
+                        <li sec:authorize="isAnonymous()"><a th:href="@{/signup}">Signup</a></li>
                     </ul>
                 </div>
             </div>

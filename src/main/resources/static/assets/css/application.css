@@ -103,3 +103,17 @@ div.enhance{
     background: #63b175;
     color: #fff;
 }
+
+div.filesystem{
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+}
+div.filesystem.navigation{
+
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}

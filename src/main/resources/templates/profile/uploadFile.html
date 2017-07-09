@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout"
+      th:with="title='Spices'">
+<th:block layout:fragment="content">
+    <div class="container p-t-30">
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <form th:action="@{/profile/upload}" th:object="${fileElement}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" th:field="*{parentId}" />
+                    <div class="form-group">
+                        <label class="control-label"><h4>Name</h4></label>
+                        <input type="text" th:field="*{name}" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"><h4>File</h4></label>
+                        <input type="file" th:name="file" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"><h4>Tags</h4></label>
+                        <input type="text" th:field="*{tags}" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"><h4>Category</h4></label>
+                        <input type="text" th:field="*{category}" class="form-control"/>
+                    </div>
+
+
+                    <button type="submit" >Upload</button>
+                    <button type="cancel" >Cancel</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</th:block>
+</html>

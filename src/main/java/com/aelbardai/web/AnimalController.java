@@ -2,6 +2,7 @@ package com.aelbardai.web;
 
 import com.aelbardai.animals.domain.Animal;
 import com.aelbardai.animals.service.AnimalService;
+import com.aelbardai.files.service.FileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import javax.validation.Valid;
 public class AnimalController {
 
     private final AnimalService animalService;
+    private final FileService fileService;
 
     @GetMapping(value={"/list"})
     public ModelAndView viewAllAnimals(){
@@ -42,7 +44,9 @@ public class AnimalController {
 
     @GetMapping("/add")
     public ModelAndView addanimalView(){
-        return new ModelAndView("animals/add" , "animal", new Animal());
+        ModelAndView modelAndView =new ModelAndView("animals/add" , "animal", new Animal());
+        modelAndView.addObject("images" , fileService.getImages());
+        return modelAndView;
     }
 
     @PostMapping("/add")

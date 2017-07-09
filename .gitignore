@@ -25,3 +25,7 @@ nbdist/
 
 ### Mac ###
 .DS_Store
+
+### some test folders for data ###
+testFiles/
+data/

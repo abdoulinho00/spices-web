@@ -9,8 +9,8 @@
     <div class="container p-t-30">
         <div class="row">
             <div class="col-md-6">
-                <form th:action="@{/user/create}" th:object="${form}" method="post">
-                    <!--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+                <form th:action="@{/signup}" th:object="${form}" method="post">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="form-group">
                         <label class="control-label"><h4>Email</h4></label>
                         <input type="email" th:field="*{email}" class="form-control"/>

@@ -14,14 +14,15 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class UserCreateForm {
     @NotEmpty
-    private String email = "";
+    private String email;
 
     @NotEmpty
-    private String password = "";
+    private String password;
 
     @NotEmpty
-    private String passwordRepeated = "";
+    private String passwordRepeated;
 
     @NotNull
+    @Builder.Default
     private Role role = Role.USER;
 }

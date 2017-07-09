@@ -9,3 +9,11 @@ spring:
     hibernate:
       ddl-auto: update
     database: MYSQL
+
+  http:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 30MB
+
+file-manager:
+  base-folder:  /Users/dev/workspace/spices-web/data

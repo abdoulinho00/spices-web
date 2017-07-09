@@ -8,8 +8,15 @@ spring:
       test-on-borrow: true
       validation-query: SELECT 1
     url: jdbc:h2:mem:${spring.datasource.name};MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  http:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
   jpa:
     hibernate:
       ddl-auto: create
 server:
   port: 8081
+
+file-manager:
+  base-folder:  /home/jenkins

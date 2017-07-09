@@ -1,5 +1,6 @@
 package com.aelbardai.user.service;
 
+import com.aelbardai.user.domain.Role;
 import com.aelbardai.user.domain.User;
 import com.aelbardai.user.domain.UserCreateForm;
 import com.aelbardai.user.repository.UserRepository;
@@ -39,7 +40,7 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setEmail(form.getEmail());
         user.setPasswordHash(new BCryptPasswordEncoder().encode(form.getPassword()));
-        user.setRole(form.getRole());
+        user.setRole(form.getRole()==null? Role.USER:form.getRole());
         return userRepository.save(user);
     }
 }

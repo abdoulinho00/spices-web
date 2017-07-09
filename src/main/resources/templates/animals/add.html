@@ -7,9 +7,9 @@
       th:with="title='Spices'">
 <th:block layout:fragment="content">
     <div class="container p-t-30">
-        <div class="row">
-            <div class="col-md-6">
-                <form th:action="@{/animals/add}" th:object="${animal}" method="post">
+        <form th:action="@{/animals/add}" th:object="${animal}" method="post">
+            <div class="row">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="control-label"><h4>Name</h4></label>
                         <input type="text" th:field="*{name}" class="form-control"/>
@@ -28,11 +28,22 @@
                         <label class="control-label">To do field</h4></label>
                     </div>
                     -->
-
-                    <button type="submit" >Add Animal</button>
-                </form>
+                </div>
             </div>
-        </div>
+            <div class="well row">
+                <div class="col-md-3 col-sm-6 col-xs-12 text-center" th:each="image : ${images}">
+                    <div>
+                        <img th:src="@{/profile/view/{id}(id=${image.id})}" class="img-thumbnail img-thumbnail">
+                    </div>
+                    <div>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit" >Add Animal</button>
+            </div>
+        </form>
     </div>
 </th:block>
 </html>
